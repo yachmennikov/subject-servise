@@ -1,5 +1,7 @@
 <div class="container">
   <app-search></app-search>
+  <app-google-results *ngIf="searchServise.googleParam$ | async"></app-google-results>
+  <app-bing-results *ngIf="searchServise.bingParam$ | async"></app-bing-results>
 </div>
 <div class="container">
   <router-outlet></router-outlet>
