@@ -1,0 +1,35 @@
+<form class="search-form" [formGroup]="form">
+  <h2 class="center-align">Look for something</h2>
+  <label for="search">Search for:</label>
+  <input
+    type="text"
+    name="search"
+    id="search"
+    formControlName="search"
+    (input)="searchRequest($event)">
+  <p>
+    <label for="google">
+      <input
+        type="radio"
+        id="google"
+        class="with-gap"
+        [checked]="isGoogleSelected"
+        (click)="toggleSearchValue($event)"
+        value="google">
+      <span>Google</span>
+    </label>
+  </p>
+  <p>
+    <label for="bing">
+      <input
+        type="radio"
+        id="bing"
+        class="with-gap"
+        [checked]="isBingSelected"
+        (click)="toggleSearchValue($event)"
+        value="bing">
+      <span>Bing</span>
+    </label>
+  </p>
+</form>
+
