@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SearchServise {
 
   searchValue$ = new BehaviorSubject<string>('');
@@ -12,21 +10,17 @@ export class SearchServise {
 
   constructor() { }
 
-  changeSearchValue(value: BehaviorSubject<string>) {
-    this.searchValue$ = value;
+  changeSearchValue(value: string) {
+    this.searchValue$.next(value);
     console.log(this.searchValue$);
   }
 
   toggleGoogleParam(value: boolean) {
-    console.log(value);
-    if (value === true) {
-      this.googleParam$.next(true);
-    }
-    console.log(this.googleParam$);
+   this.googleParam$.next(value);
   }
 
   toggleBingParam(value: boolean) {
-    console.log(this.googleParam$);
+    this.bingParam$.next(value);
   }
 
 }

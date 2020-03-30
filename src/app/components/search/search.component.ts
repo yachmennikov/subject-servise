@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { SearchServise } from '../search.service';
-import { BehaviorSubject } from 'rxjs';
+import { SearchServise } from '../../servises/search.service';
 
 @Component({
   selector: 'app-search',
@@ -11,8 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 export class SearchComponent implements OnInit {
 
   form: FormGroup;
-  isGoogleSelected = false;
-  isBingSelected = false;
+  isGoogleSelected: boolean;
+  isBingSelected: boolean;
 
   constructor(public searchServise: SearchServise) { }
 
@@ -28,6 +27,7 @@ export class SearchComponent implements OnInit {
       this.searchServise.toggleGoogleParam(this.isGoogleSelected);
     } else {
       this.isBingSelected = !this.isBingSelected;
+      this.searchServise.toggleBingParam(this.isBingSelected);
     }
   }
 
