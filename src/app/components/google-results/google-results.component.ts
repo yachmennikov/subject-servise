@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchServise } from 'src/app/servises/search.service';
 
 @Component({
   selector: 'app-google-results',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public searchServise: SearchServise) { }
 
   ngOnInit() {
   }

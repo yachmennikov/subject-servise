@@ -12,7 +12,6 @@ export class SearchServise {
 
   changeSearchValue(value: string) {
     this.searchValue$.next(value);
-    console.log(this.searchValue$);
   }
 
   toggleGoogleParam(value: boolean) {

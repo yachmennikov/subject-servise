@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchServise } from 'src/app/servises/search.service';
 
 @Component({
   selector: 'app-bing-results',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BingResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public searchServise: SearchServise) { }
 
   ngOnInit() {
+    console.log(this.searchServise.searchValue$);
   }
 
 }
