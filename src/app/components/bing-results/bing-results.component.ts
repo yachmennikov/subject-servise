@@ -10,8 +10,6 @@ export class BingResultsComponent implements OnInit {
 
   constructor(public searchServise: SearchServise) { }
 
-  ngOnInit() {
-    console.log(this.searchServise.searchValue$);
-  }
+  ngOnInit() {}
 
 }

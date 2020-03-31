@@ -6,14 +6,19 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { BingResultsComponent } from './components/bing-results/bing-results.component';
 import { GoogleResultsComponent } from './components/google-results/google-results.component';
-import { SearchServise } from './servises/search.service';
+import { SettingsComponent } from './components/settings/settings.component';
+import { MainContainerComponent } from './containers/main-container/main-container.component';
+import { DinamicBackgroundDirective } from './directives/dinamic-background.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     BingResultsComponent,
-    GoogleResultsComponent
+    GoogleResultsComponent,
+    SettingsComponent,
+    MainContainerComponent,
+    DinamicBackgroundDirective
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,7 @@ import { SearchServise } from './servises/search.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SearchServise],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

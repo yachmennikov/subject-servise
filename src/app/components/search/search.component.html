@@ -6,7 +6,9 @@
     name="search"
     id="search"
     formControlName="search"
-    (input)="searchRequest($event)">
+    (input)="searchRequest($event)"
+    [ngStyle]="{'backgroundColor': settingsServise.searchInputBackground$ | async }"
+    >
   <p>
     <label for="google">
       <input

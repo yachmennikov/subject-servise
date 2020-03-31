@@ -1,0 +1,56 @@
+<div class="container">
+  <a [routerLink]="['/']" class="waves-effect waves-light btn">Home page</a>
+</div>
+<div class="container">
+  <h2 class="center-align">Settings</h2>
+  <h4>Search input color:</h4>
+  <p>
+    <label for="white">
+      <input
+        type="radio"
+        id="white"
+        class="with-gap"
+        [checked]="isWhite"
+        (click)="toggleColorValue($event)"
+        value="white">
+      <span>White Default</span>
+    </label>
+  </p>
+  <p>
+    <label for="blue">
+      <input
+        type="radio"
+        id="blue"
+        class="with-gap"
+        [checked]="isBlue"
+        (click)="toggleColorValue($event)"
+        value="blue">
+      <span>Blue</span>
+    </label>
+  </p>
+  <p>
+    <label for="yellow">
+      <input
+        type="radio"
+        id="yellow"
+        class="with-gap"
+        [checked]="isYellow"
+        (click)="toggleColorValue($event)"
+        value="yellow">
+      <span>Yellow</span>
+    </label>
+  </p>
+  <p>
+    <label for="pink">
+      <input
+        type="radio"
+        id="pink"
+        class="with-gap"
+        [checked]="isPink"
+        (click)="toggleColorValue($event)"
+        value="pink">
+      <span>Pink</span>
+    </label>
+  </p>
+</div>
+<router-outlet></router-outlet>
