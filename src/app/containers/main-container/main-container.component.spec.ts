@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MainContainerComponent } from './main-container.component';
 
 describe('MainContainerComponent', () => {
@@ -11,15 +10,12 @@ describe('MainContainerComponent', () => {
       declarations: [ MainContainerComponent ]
     })
     .compileComponents();
+    fixture = TestBed.createComponent(MainContainerComponent);
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

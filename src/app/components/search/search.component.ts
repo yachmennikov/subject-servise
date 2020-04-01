@@ -27,16 +27,10 @@ export class SearchComponent implements OnInit {
     if (event.target.value === 'google') {
       this.isGoogleSelected = !this.isGoogleSelected;
       this.searchServise.toggleGoogleParam(this.isGoogleSelected);
-      if (this.isGoogleSelected === true) {
-        this.isBingSelected = false;
-      }
       this.router.navigate([''], { queryParams: { engine: 'google', query: this.form.value.search }});
     } else {
       this.isBingSelected = !this.isBingSelected;
       this.searchServise.toggleBingParam(this.isBingSelected);
-      if (this.isBingSelected === true) {
-        this.isGoogleSelected = false;
-      }
       this.router.navigate([''], { queryParams: { engine: 'bing', query: this.form.value.search }});
     }
   }

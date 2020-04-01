@@ -1,25 +1,36 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { BingResultsComponent } from './bing-results.component';
+import { SearchServise } from '../../servises/search.service';
+import { SettingsService } from 'src/app/servises/settings.service';
 
-describe('BingResultsComponent', () => {
-  let component: BingResultsComponent;
+describe('SearchComponent test', () => {
   let fixture: ComponentFixture<BingResultsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [ BingResultsComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
+      declarations: [BingResultsComponent],
+      providers: [SearchServise, SettingsService]
+    }).compileComponents();
     fixture = TestBed.createComponent(BingResultsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the SearchComponent', () => {
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
+
+  it('should render text in a h4 tag', () => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h4').textContent).toContain('Bing Block');
+  });
+
+  it('should render test of search value in Bing page', () => {
+    const searchServise = fixture.debugElement.injector.get(SearchServise);
+    searchServise.searchValue$.next('value');
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h5').textContent).toContain('value');
+  });
+
 });

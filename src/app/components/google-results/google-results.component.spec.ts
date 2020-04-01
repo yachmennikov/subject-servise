@@ -1,25 +1,39 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { GoogleResultsComponent } from './google-results.component';
+import { SearchServise } from '../../servises/search.service';
+import { SettingsService } from 'src/app/servises/settings.service';
 
-describe('GoogleResultsComponent', () => {
-  let component: GoogleResultsComponent;
+describe('SearchComponent test', () => {
   let fixture: ComponentFixture<GoogleResultsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [ GoogleResultsComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
+      declarations: [GoogleResultsComponent],
+      providers: [SearchServise, SettingsService]
+    }).compileComponents();
     fixture = TestBed.createComponent(GoogleResultsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the SearchComponent', () => {
+    // fixture = TestBed.createComponent(GoogleResultsComponent);
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
+
+  it('should render text in a h4 tag', () => {
+    // fixture = TestBed.createComponent(GoogleResultsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h4').textContent).toContain('Google block');
+  });
+
+  it('should render test of search value in Google page', () => {
+    // fixture = TestBed.createComponent(GoogleResultsComponent);
+    const searchServise = fixture.debugElement.injector.get(SearchServise);
+    searchServise.searchValue$.next('value');
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h5').textContent).toContain('value');
+  });
+
 });

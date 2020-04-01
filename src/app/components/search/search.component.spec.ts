@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { SearchComponent } from './search.component';
+import { SearchServise } from '../../servises/search.service';
+import { SettingsService } from 'src/app/servises/settings.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('SearchComponent', () => {
-  let component: SearchComponent;
+describe('SearchComponent test', () => {
   let fixture: ComponentFixture<SearchComponent>;
 
-  beforeEach(async(() => {
+  beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      declarations: [SearchComponent],
+      imports: [RouterTestingModule],
+      providers: [SearchServise, SettingsService]
+    }).compileComponents();
   });
 
-  it('should create', () => {
+  it('should create the SearchComponent', () => {
+    fixture = TestBed.createComponent(SearchComponent);
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
+
 });
