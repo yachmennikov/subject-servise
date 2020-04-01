@@ -3,7 +3,7 @@ import { GoogleResultsComponent } from './google-results.component';
 import { SearchServise } from '../../servises/search.service';
 import { SettingsService } from 'src/app/servises/settings.service';
 
-describe('SearchComponent test', () => {
+describe('GoogleResultsComponent test', () => {
   let fixture: ComponentFixture<GoogleResultsComponent>;
 
   beforeEach( () => {
@@ -14,7 +14,7 @@ describe('SearchComponent test', () => {
     fixture = TestBed.createComponent(GoogleResultsComponent);
   });
 
-  it('should create the SearchComponent', () => {
+  it('should create the GoogleResultsComponent', () => {
     const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });

@@ -3,7 +3,7 @@ import { BingResultsComponent } from './bing-results.component';
 import { SearchServise } from '../../servises/search.service';
 import { SettingsService } from 'src/app/servises/settings.service';
 
-describe('SearchComponent test', () => {
+describe('BingResultsComponent test', () => {
   let fixture: ComponentFixture<BingResultsComponent>;
 
   beforeEach( () => {
@@ -14,7 +14,7 @@ describe('SearchComponent test', () => {
     fixture = TestBed.createComponent(BingResultsComponent);
   });
 
-  it('should create the SearchComponent', () => {
+  it('should create the BingResultsComponent', () => {
     const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
