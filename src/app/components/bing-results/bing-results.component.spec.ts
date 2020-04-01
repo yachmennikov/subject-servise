@@ -8,8 +8,8 @@ describe('SearchComponent test', () => {
 
   beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [BingResultsComponent],
-      providers: [SearchServise, SettingsService]
+      declarations: [ BingResultsComponent ],
+      providers: [ SearchServise, SettingsService ]
     }).compileComponents();
     fixture = TestBed.createComponent(BingResultsComponent);
   });

@@ -8,27 +8,24 @@ describe('SearchComponent test', () => {
 
   beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [GoogleResultsComponent],
-      providers: [SearchServise, SettingsService]
+      declarations: [ GoogleResultsComponent ],
+      providers: [ SearchServise, SettingsService ]
     }).compileComponents();
     fixture = TestBed.createComponent(GoogleResultsComponent);
   });
 
   it('should create the SearchComponent', () => {
-    // fixture = TestBed.createComponent(GoogleResultsComponent);
     const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
 
   it('should render text in a h4 tag', () => {
-    // fixture = TestBed.createComponent(GoogleResultsComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h4').textContent).toContain('Google block');
   });
 
   it('should render test of search value in Google page', () => {
-    // fixture = TestBed.createComponent(GoogleResultsComponent);
     const searchServise = fixture.debugElement.injector.get(SearchServise);
     searchServise.searchValue$.next('value');
     fixture.detectChanges();
