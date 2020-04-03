@@ -8,7 +8,6 @@ import { BingResultsComponent } from './components/bing-results/bing-results.com
 import { GoogleResultsComponent } from './components/google-results/google-results.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { MainContainerComponent } from './containers/main-container/main-container.component';
-import { DinamicBackgroundDirective } from './directives/dinamic-background.directive';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { DinamicBackgroundDirective } from './directives/dinamic-background.dire
     BingResultsComponent,
     GoogleResultsComponent,
     SettingsComponent,
-    MainContainerComponent,
-    DinamicBackgroundDirective
+    MainContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +24,7 @@ import { DinamicBackgroundDirective } from './directives/dinamic-background.dire
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
