@@ -8,6 +8,12 @@ import { BingResultsComponent } from './components/bing-results/bing-results.com
 import { GoogleResultsComponent } from './components/google-results/google-results.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { MainContainerComponent } from './containers/main-container/main-container.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/store';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { ArticlesEffects } from './store/effects/articles.effects';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,17 @@ import { MainContainerComponent } from './containers/main-container/main-contain
     BingResultsComponent,
     GoogleResultsComponent,
     SettingsComponent,
-    MainContainerComponent
+    MainContainerComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([ ArticlesEffects ])
   ],
   exports: [],
   providers: [],

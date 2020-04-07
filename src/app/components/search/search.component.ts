@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SearchServise } from '../../servises/search.service';
 import { SettingsService } from 'src/app/servises/settings.service';
 import { Router } from '@angular/router';
@@ -15,11 +15,15 @@ export class SearchComponent implements OnInit {
   isGoogleSelected = false;
   isBingSelected = false;
 
-  constructor(public searchServise: SearchServise, private settingsServise: SettingsService, private router: Router) { }
+  constructor(
+    public searchServise: SearchServise,
+    private settingsServise: SettingsService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-     search: new FormControl('')
+     search: new FormControl('', [Validators.required])
     });
   }
 

@@ -1,0 +1,12 @@
+<div class="container">
+  <a routerLink="/" class="waves-effect waves-light btn">Home</a>
+</div>
+<div class="container">
+  <ul>
+    <li *ngFor="let article of articles$ | async">
+      <h4>{{ article.title }}</h4>
+      <p>{{ article.text }}</p>
+      <strong>{{ article.author }}</strong>
+    </li>
+  </ul>
+</div>

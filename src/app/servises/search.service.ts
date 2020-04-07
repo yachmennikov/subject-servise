@@ -18,12 +18,10 @@ export class SearchServise {
 
   toggleGoogleParam(value: boolean) {
    this.googleParam$.next(value);
-   this.bingParam$.next(!value);
   }
 
   toggleBingParam(value: boolean) {
     this.bingParam$.next(value);
-    this.googleParam$.next(!value);
   }
 
 }
